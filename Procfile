@@ -1,1 +1,1 @@
-web: gunicorn infraconnect.wsgi:application
+web: gunicorn core.wsgi.application
