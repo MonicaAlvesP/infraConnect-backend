@@ -8,7 +8,11 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost", cast=Csv())
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    config("DJANGO_ALLOWED_HOST", default="backend-infraconnect.fly.dev"),
+]
 CORS_ALLOWED_ORIGINS = config("CORS_ALLOWED_ORIGINS", default="", cast=Csv())
 
 INSTALLED_APPS = [
